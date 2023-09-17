@@ -35,11 +35,9 @@ public class GamePanel extends JPanel implements ActionListener {
         running = true;
         timer = new Timer(DELAY, this);
         timer.start();
-        System.out.println("Game started");
     }
     public void restartGame() {
         // Reset relevant variables to start a new game
-        System.out.println("Restarting game method");
         bodyParts = 6;
         applesEaten = 0;
         direction = 'R';
@@ -60,7 +58,6 @@ public class GamePanel extends JPanel implements ActionListener {
             timer = new Timer(DELAY, this);
             timer.start();
         }
-        System.out.println("Game restarted");
     }
     public void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -85,7 +82,7 @@ public class GamePanel extends JPanel implements ActionListener {
 
             for (int i = 0; i < bodyParts; i++){
                 if(i == 0){
-                    g.setColor(new Color(15, 73, 9));
+                    g.setColor(new Color(181, 245, 173));
                     g.fillRect(x[i],y[i],UNIT_SIZE,UNIT_SIZE);
                 } else if(i%2 == 0) {
                     g.setColor(new Color(5, 131, 10));
@@ -191,7 +188,6 @@ public class GamePanel extends JPanel implements ActionListener {
     public class MyKeyAdapter extends KeyAdapter {
         @Override
         public void keyPressed(KeyEvent e) {
-            System.out.println("Key pressed: " + e.getKeyCode());
             switch (e.getKeyCode()) {
                 case KeyEvent.VK_LEFT -> {
                     if (direction != 'R') {
@@ -215,7 +211,6 @@ public class GamePanel extends JPanel implements ActionListener {
                 }
                 case KeyEvent.VK_R -> {
                     if (!running) {
-                        System.out.println("Restarting game...");
                         restartGame();
                     }
                 }
