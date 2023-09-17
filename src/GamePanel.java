@@ -31,10 +31,40 @@ public class GamePanel extends JPanel implements ActionListener {
         startGame();
     }
     public void startGame() {
+
         newApple();
         running = true;
         timer = new Timer(DELAY, this);
         timer.start();
+        System.out.println("Game started");
+    }
+    public void restartGame() {
+        // Reset relevant variables to start a new game
+        System.out.println("Restarting game method");
+        bodyParts = 6;
+        applesEaten = 0;
+        direction = 'R';
+
+        // Initialize the snake's position
+        for(int i = 0; i < bodyParts; i++) {
+            x[i] = 0; // you may set it to some initial value
+            y[i] = 0; // you may set it to some initial value
+        }
+
+        // Reset apple position
+        newApple();
+
+        // Reset running status and restart timer
+        if (!running) {
+            running = true;
+            if (timer != null) {
+                timer.stop(); // Stop the old timer
+            }
+            timer = new Timer(DELAY, this);
+            timer.start();
+        }
+
+        System.out.println("Game restarted");
     }
     public void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -154,6 +184,12 @@ public class GamePanel extends JPanel implements ActionListener {
         g.setFont(new Font("Ink Free",Font.BOLD, 75));
         FontMetrics metrics2 = getFontMetrics(g.getFont());
         g.drawString("Game Over",(SCREEN_WIDTH - metrics2.stringWidth("Game Over"))/2, SCREEN_HEIGHT/2);
+
+        g.setColor(Color.red);
+        g.setFont(new Font("Ink Free",Font.BOLD, 20));
+        FontMetrics metrics3 = getFontMetrics(g.getFont());
+        g.drawString("Press 'R' to play again.",(SCREEN_WIDTH - metrics3.stringWidth("Press 'R' to play again."))/2, SCREEN_HEIGHT/3);
+
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -168,6 +204,7 @@ public class GamePanel extends JPanel implements ActionListener {
     public class MyKeyAdapter extends KeyAdapter {
         @Override
         public void keyPressed(KeyEvent e) {
+            System.out.println("Key pressed: " + e.getKeyCode());
             switch (e.getKeyCode()){
                 case KeyEvent.VK_LEFT:
                     if(direction != 'R') {
@@ -187,6 +224,12 @@ public class GamePanel extends JPanel implements ActionListener {
                 case KeyEvent.VK_DOWN:
                     if(direction != 'U') {
                         direction = 'D';
+                    }
+                    break;
+                case KeyEvent.VK_R:
+                    if (!running) {
+                        System.out.println("Restarting game...");
+                        restartGame();
                     }
                     break;
             }

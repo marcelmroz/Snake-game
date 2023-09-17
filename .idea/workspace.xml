@@ -7,6 +7,7 @@
     <list default="true" id="b843d1e8-2464-4835-b0da-e9f180dd42e0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SnakeGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694796554735</updated>
-      <workItem from="1694796555808" duration="10931000" />
+      <workItem from="1694796555808" duration="13707000" />
     </task>
     <task id="LOCAL-00001" summary="add class">
       <created>1694802011980</created>
@@ -100,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694942645133</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="adds 3 types of apple">
+      <created>1694944819639</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1694944819639</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +121,7 @@
     <MESSAGE value="add all methods" />
     <MESSAGE value="grid + random apple" />
     <MESSAGE value="working game" />
-    <option name="LAST_COMMIT_MESSAGE" value="working game" />
+    <MESSAGE value="adds 3 types of apple" />
+    <option name="LAST_COMMIT_MESSAGE" value="adds 3 types of apple" />
   </component>
 </project>
