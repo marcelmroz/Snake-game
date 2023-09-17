@@ -46,15 +46,26 @@ public class GamePanel extends JPanel implements ActionListener {
                 g.drawLine(i*UNIT_SIZE, 0, i*UNIT_SIZE, SCREEN_HEIGHT);
                 g.drawLine(0, i*UNIT_SIZE, SCREEN_WIDTH,i*UNIT_SIZE);
             }
-            g.setColor(Color.red);
-            g.fillOval(appleX,appleY,UNIT_SIZE,UNIT_SIZE);
+            if((applesEaten > 8) && (applesEaten%2 == 0)){
+                g.setColor(Color.green);
+                g.fillOval(appleX,appleY,UNIT_SIZE,UNIT_SIZE);
+            } else if (((applesEaten > 10) && (applesEaten%5 == 0))){
+                g.setColor(Color.white);
+                g.fillOval(appleX,appleY,UNIT_SIZE,UNIT_SIZE);
+            }else {
+                g.setColor(Color.red);
+                g.fillOval(appleX,appleY,UNIT_SIZE,UNIT_SIZE);
+            }
 
             for (int i = 0; i < bodyParts; i++){
                 if(i == 0){
-                    g.setColor(Color.green);
+                    g.setColor(new Color(15, 73, 9));
+                    g.fillRect(x[i],y[i],UNIT_SIZE,UNIT_SIZE);
+                } else if(i%2 == 0) {
+                    g.setColor(new Color(5, 131, 10));
                     g.fillRect(x[i],y[i],UNIT_SIZE,UNIT_SIZE);
                 } else {
-                    g.setColor(new Color(45,180,0));
+                    g.setColor(new Color(31, 115, 15));
                     g.fillRect(x[i],y[i],UNIT_SIZE,UNIT_SIZE);
                 }
             }
@@ -94,10 +105,17 @@ public class GamePanel extends JPanel implements ActionListener {
     }
     public void checkApple() {
         if((x[0] == appleX) && (y[0] == appleY)){
-            bodyParts++;
             applesEaten++;
             newApple();
+            if((applesEaten > 8) && (applesEaten%2 == 0)){
+                bodyParts += 2;
+            } else if (((applesEaten > 10) && (applesEaten%5 == 0))) {
+                bodyParts = 7;
+            } else {
+                bodyParts++;
+            }
         }
+
     }
     public void checkCollision(){
         //checks if head touches body

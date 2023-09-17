@@ -56,7 +56,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694796554735</updated>
-      <workItem from="1694796555808" duration="8952000" />
+      <workItem from="1694796555808" duration="10931000" />
     </task>
     <task id="LOCAL-00001" summary="add class">
       <created>1694802011980</created>
@@ -93,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694889478976</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="working game">
+      <created>1694942645133</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694942645133</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +112,7 @@
     <MESSAGE value="add function" />
     <MESSAGE value="add all methods" />
     <MESSAGE value="grid + random apple" />
-    <option name="LAST_COMMIT_MESSAGE" value="grid + random apple" />
+    <MESSAGE value="working game" />
+    <option name="LAST_COMMIT_MESSAGE" value="working game" />
   </component>
 </project>
