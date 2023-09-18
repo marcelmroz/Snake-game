@@ -37,23 +37,20 @@ public class GamePanel extends JPanel implements ActionListener {
         timer.start();
     }
     public void restartGame() {
-        // Reset relevant variables to start a new game
         snakeBodyParts = 6;
         applesEaten = 0;
         direction = 'R';
 
-        // Initialize the snake's position
         for(int i = 0; i < snakeBodyParts; i++) {
             x[i] = 0;
             y[i] = 0;
         }
         newApple();
 
-        // Reset running status and restart timer
         if (!running) {
             running = true;
             if (timer != null) {
-                timer.stop(); // Stop the old timer
+                timer.stop();
             }
             timer = new Timer(DELAY, this);
             timer.start();
@@ -118,7 +115,7 @@ public class GamePanel extends JPanel implements ActionListener {
             case 'R' -> x[0] = x[0] + UNIT_SIZE;
         }
     }
-    public void checkEattenApple() {
+    public void checkEatenApple() {
         if((x[0] == appleX) && (y[0] == appleY)){
             applesEaten++;
             newApple();
@@ -167,7 +164,7 @@ public class GamePanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(running) {
             move();
-            checkEattenApple();
+            checkEatenApple();
             checkCollision();
         }
         repaint();
