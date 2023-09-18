@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b843d1e8-2464-4835-b0da-e9f180dd42e0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/github_images/snake_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/github_images/snake_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/github_images/snake_gameover.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +47,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\marce\IdeaProjects\Snake\github_images" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,7 +60,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694796554735</updated>
-      <workItem from="1694796555808" duration="15101000" />
+      <workItem from="1694796555808" duration="15887000" />
     </task>
     <task id="LOCAL-00001" summary="add class">
       <created>1694802011980</created>
@@ -131,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694954273055</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="readme updated">
+      <created>1694954687533</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1694954687533</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +156,7 @@
     <MESSAGE value="press R to play again" />
     <MESSAGE value="cleaner code" />
     <MESSAGE value="final version" />
-    <option name="LAST_COMMIT_MESSAGE" value="final version" />
+    <MESSAGE value="readme updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme updated" />
   </component>
 </project>

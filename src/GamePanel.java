@@ -14,7 +14,7 @@ public class GamePanel extends JPanel implements ActionListener {
     static final int DELAY = 75;
     final int[] x = new int[GAME_UNITS];
     final int[] y = new int[GAME_UNITS];
-    int bodyParts = 6;
+    int snakeBodyParts = 6;
     int applesEaten = 0;
     int appleX;
     int appleY;
@@ -38,12 +38,12 @@ public class GamePanel extends JPanel implements ActionListener {
     }
     public void restartGame() {
         // Reset relevant variables to start a new game
-        bodyParts = 6;
+        snakeBodyParts = 6;
         applesEaten = 0;
         direction = 'R';
 
         // Initialize the snake's position
-        for(int i = 0; i < bodyParts; i++) {
+        for(int i = 0; i < snakeBodyParts; i++) {
             x[i] = 0;
             y[i] = 0;
         }
@@ -80,7 +80,7 @@ public class GamePanel extends JPanel implements ActionListener {
                 g.fillOval(appleX,appleY,UNIT_SIZE,UNIT_SIZE);
             }
 
-            for (int i = 0; i < bodyParts; i++){
+            for (int i = 0; i < snakeBodyParts; i++){
                 if(i == 0){
                     g.setColor(new Color(181, 245, 173));
                     g.fillRect(x[i],y[i],UNIT_SIZE,UNIT_SIZE);
@@ -106,7 +106,7 @@ public class GamePanel extends JPanel implements ActionListener {
         appleY = random.nextInt(SCREEN_HEIGHT/UNIT_SIZE)*UNIT_SIZE;
     }
     public void move(){
-        for(int i=bodyParts;i > 0; i--){
+        for(int i = snakeBodyParts; i > 0; i--){
             x[i] = x[i-1];
             y[i] = y[i-1];
         }
@@ -118,22 +118,22 @@ public class GamePanel extends JPanel implements ActionListener {
             case 'R' -> x[0] = x[0] + UNIT_SIZE;
         }
     }
-    public void checkApple() {
+    public void checkEattenApple() {
         if((x[0] == appleX) && (y[0] == appleY)){
             applesEaten++;
             newApple();
             if((applesEaten > 8) && (applesEaten%2 == 0)){
-                bodyParts += 2;
+                snakeBodyParts += 2;
             } else if (((applesEaten > 10) && (applesEaten%5 == 0))) {
-                bodyParts = 7;
+                snakeBodyParts = 7;
             } else {
-                bodyParts++;
+                snakeBodyParts++;
             }
         }
     }
     public void checkCollision(){
         //checks if head touches body
-        for(int i = bodyParts; i > 0; i--){
+        for(int i = snakeBodyParts; i > 0; i--){
             if ((x[0] == x[i]) && (y[0] == y[i])) {
                 running = false;
                 break;
@@ -157,19 +157,16 @@ public class GamePanel extends JPanel implements ActionListener {
         }
     }
     public void gameOver(Graphics g){
-        //Score
         g.setColor(Color.white);
         g.setFont(new Font("Ink Free",Font.BOLD, 40));
         FontMetrics metrics1 = getFontMetrics(g.getFont());
         g.drawString("Score: " + applesEaten,(SCREEN_WIDTH - metrics1.stringWidth("Score: " + applesEaten))/2, g.getFont().getSize());
 
-        //Game Over sign
         g.setColor(Color.red);
         g.setFont(new Font("Ink Free",Font.BOLD, 75));
         FontMetrics metrics2 = getFontMetrics(g.getFont());
         g.drawString("Game Over",(SCREEN_WIDTH - metrics2.stringWidth("Game Over"))/2, SCREEN_HEIGHT/2);
 
-        //Press R to play again
         g.setColor(Color.red);
         g.setFont(new Font("Ink Free",Font.BOLD, 20));
         FontMetrics metrics3 = getFontMetrics(g.getFont());
@@ -179,7 +176,7 @@ public class GamePanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(running) {
             move();
-            checkApple();
+            checkEattenApple();
             checkCollision();
         }
         repaint();
