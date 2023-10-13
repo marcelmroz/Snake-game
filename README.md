@@ -1,6 +1,6 @@
 # Snake-game
 ## Snake game in Java using JFrame
 
-![game example 1](./github_images/snake_1.png)
-![game example 2](./github_images/snake_2.png)
-![game over](./github_images/snake_gameover.png)
+
+https://github.com/marcelmroz/Snake-game/assets/103954333/172f4fed-92c8-4a66-857d-bc2f328a875f
+
